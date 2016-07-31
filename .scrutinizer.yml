@@ -2,14 +2,14 @@ tools:
     sensiolabs_security_checker: true
     php_cpd:
         enabled: true
-        excluded_dirs: [web/app*]
+        excluded_dirs: [web/app*, var/*]
     php_code_sniffer:
         enabled: true
         config:
-            standard: PSR1
+            standard: PSR2
             tab_width: 4
         filter:
-            excluded_paths: [app/*]
+            excluded_paths: [app/*, var/*]
     php_cs_fixer:
         enabled: true
         config:
@@ -17,22 +17,22 @@ tools:
             fixers:
                 indentation: true
         filter:
-            excluded_paths: [app/*]
+            excluded_paths: [app/*, var/*]
     php_mess_detector:
         filter:
-            excluded_paths: [app/*]
+            excluded_paths: [app/*, var/*]
         enabled: true
     php_analyzer:
         enabled: true
         filter:
-            excluded_paths: [app/*]
+            excluded_paths: [app/*, var/*]
         config:
             use_statement_fixes:
                 order_alphabetically: true
     php_loc: true
     php_pdepend:
         excluded_dirs:
-            [vendor/*, app/*]
+            [vendor/*, app/*, var/*]
         enabled: true
 
 build:
