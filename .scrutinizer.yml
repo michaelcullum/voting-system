@@ -39,6 +39,13 @@ build:
     environment:
         php:
             version: 7.0.8
+    tests:
+        override:
+            -
+                command: 'phpunit --coverage-clover=some-file'
+                coverage:
+                    file: 'some-file'
+                    format: 'clover'
 
 changetracking:
     bug_patterns: ["\bfix(?:es|ed)?\b", "\b\\[(?:bug|fix)\\]\b"]
