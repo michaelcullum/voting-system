@@ -1,6 +1,6 @@
 {
-    "name": "michaelcullum/voting.system",
-    "license": "proprietary",
+    "name": "michaelcullum/voting-system",
+    "license": "MIT",
     "type": "project",
     "autoload": {
         "psr-4": {
