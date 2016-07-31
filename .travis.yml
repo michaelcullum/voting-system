@@ -17,4 +17,4 @@ before_script:
 script:
   - bin/phpunit -c app/
   - find . -path ./vendor -prune -o -type f -name "*.php" | parallel --gnu --keep-order 'php -l {} > /dev/null' || exit 1
-  - php app/console lint:twig @AppBundle
+  - php bin/console lint:twig @AppBundle
