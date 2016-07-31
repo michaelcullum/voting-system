@@ -1,0 +1,20 @@
+language: php
+php:
+  - 7.0
+
+env:
+  - DB=mysql
+
+install:
+  - sudo apt-get update
+  - travis_retry sudo apt-get install parallel
+
+before_script:
+  - phpenv rehash
+  - mysql -e 'create database symfony;'
+  - composer install
+
+script:
+  - bin/phpunit -c app/
+  - find . -path ./vendor -prune -o -type f -name "*.php" | parallel --gnu --keep-order 'php -l {} > /dev/null' || exit 1
+  - php app/console lint:twig @AppBundle
