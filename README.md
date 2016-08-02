@@ -18,3 +18,14 @@ Installation
 3. Run `composer install`
 4. Check everything is working by running tests `bin/phpunit`
 5. Start a server by running `php bin/console server:run`
+6. Create the database `bin/console doctrine:database:create`
+7. Run migrations `bin/console doctrine:migrations:migrate --no-interaction`
+
+Tests
+-----
+
+1. Run composer `composer install`
+2. Run migrations `bin/console doctrine:migrations:migrate --no-interaction`
+3. Run phpunit (test suite) `bin/phpunit`
+
+Ensure after pulling changes you run database migrations with `bin/console doctrine:migrations:migrate --no-interaction`
