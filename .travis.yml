@@ -1,8 +1,9 @@
 language: php
+
+php:
+    - 7.0
+    - nightly
 matrix:
-  include:
-    - php: 7.0
-    - php: nightly
   allow_failures:
     - php: nightly
 
