@@ -36,8 +36,7 @@ abstract class BootstrapTestSuite extends WebTestCase
 		if (strpos(strval($status), '2') === 0) {
 			$this->assertTrue($this->client->getResponse()->isSuccessful(), 'Response is a sucessful one');
 		}
-		else
-		{
+		else {
 			$this->assertEquals($this->response->getStatusCode(), $status, 'Response Code Check');
 		}
 

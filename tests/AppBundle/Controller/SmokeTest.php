@@ -1,6 +1,8 @@
 <?php
 namespace Tests\AppBundle\Controller;
 
+use Symfony\Component\DependencyInjection\Exception\InactiveScopeException;
+
 class SmokeTest extends BootstrapTestSuite
 {
 	public function testContainerServices()
@@ -20,7 +22,7 @@ class SmokeTest extends BootstrapTestSuite
 	 */
 	public function testFunctionalTests($path, $status = 200)
 	{
-		$objs = $this->setupTest($path);
+		$this->setupTest($path);
 		$this->globalTests($status);
 	}
 
