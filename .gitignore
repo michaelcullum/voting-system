@@ -17,3 +17,5 @@
 /bin/doctrine*
 /bin/phpunit
 /bin/security-checker
+/bin/pscss
+/web/assets/compiled/*
