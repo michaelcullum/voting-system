@@ -3,6 +3,7 @@ namespace AppBundle\Form\DataTransformer;
 
 use AppBundle\Entity\Invitation;
 use Doctrine\ORM\EntityManager;
+use Doctrine\Common\Persistence\ManagerRegistry;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\UnexpectedTypeException;
 
@@ -11,11 +12,11 @@ use Symfony\Component\Form\Exception\UnexpectedTypeException;
  */
 class InvitationToCodeTransformer implements DataTransformerInterface
 {
-    private $entityManager;
+    private $managerRegistry;
 
-    public function __construct(EntityManager $entityManager)
+    public function __construct(ManagerRegistry $managerRegistry)
     {
-        $this->entityManager = $entityManager;
+        $this->managerRegistry = $managerRegistry;
     }
 
     public function transform($value)
@@ -48,7 +49,7 @@ WHERE i.code = :code
 AND NOT EXISTS(SELECT 1 FROM AppBundle:User u WHERE u.invitation = i)
 DQL;
 
-        return $this->entityManager
+        return $this->managerRegistry->getManager()
             ->createQuery($dql)
             ->setParameter('code', $value)
             ->setMaxResults(1)
