@@ -16,8 +16,9 @@ install:
 
 before_script:
   - phpenv rehash
-  - mysql -e 'create database symfony;'
+  - mysql -e 'create database votingsystem;'
   - composer install
+  - bin/console doctrine:migrations:migrate --no-interaction
 
 script:
   - bin/phpunit
