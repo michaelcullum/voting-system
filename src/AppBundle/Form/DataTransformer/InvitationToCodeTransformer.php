@@ -2,7 +2,6 @@
 namespace AppBundle\Form\DataTransformer;
 
 use AppBundle\Entity\Invitation;
-use Doctrine\ORM\EntityManager;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\UnexpectedTypeException;
