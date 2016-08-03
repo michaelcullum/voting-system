@@ -87,7 +87,7 @@ fos_user:
     service:
         mailer: fos_user.mailer.twig_swift
     from_email:
-        address:        %mailer_from%
+        address:        "%mailer_from%"
         sender_name:    PHP FIG Voting System
     registration:
         form:
@@ -99,6 +99,6 @@ fos_user:
         email:
             template:   FOSUserBundle:Resetting:email.txt.twig
             from_email:
-                address:        %mailer_from%
+                address:        "%mailer_from%"
                 sender_name:    PHP FIG Voting System
 
