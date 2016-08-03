@@ -41,7 +41,8 @@ build:
             version: 7.0.8
     tests:
         before:
-            - bin/console doctrine:database:create --no-interaction
+            - mysql -e 'create database votingsystem;'
+            - composer install
             - bin/console doctrine:migrations:migrate --no-interaction
         override:
             -
