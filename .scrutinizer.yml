@@ -39,9 +39,11 @@ build:
     environment:
         php:
             version: 7.0.8
-    tests:
+    dependencies:
         before:
             - mysql -e 'create database votingsystem;'
+    tests:
+        before:
             - composer install
             - bin/console doctrine:migrations:migrate --no-interaction
         override:
