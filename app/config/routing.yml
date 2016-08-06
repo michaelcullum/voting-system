@@ -5,35 +5,12 @@ app:
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 
-# TODO: Assess if this needs bringing out
 fos_user_resetting:
     resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
     prefix: /resetting
 
-# TODO: Split this out too
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
-    prefix: /profile
-
-app_home:
-    path:      /
-    defaults:  { _controller: AppBundle:Default:index }
-
-app_user:
-    path:      /user
-    defaults:  { _controller: AppBundle:User:list }
-
-app_user_create:
-    path:      /user/create
-    defaults:  { _controller: AppBundle:User:create }
-
-app_user_view:
-    path:      /user/edit
-    defaults:  { _controller: AppBundle:User:view }
-
-app_user_view:
-    path:      /user/view/{id}
-    defaults:  { _controller: AppBundle:User:view }
 
 app_remove_trailing_slash:
     path: /{url}

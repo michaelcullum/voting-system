@@ -29,25 +29,8 @@ class User extends BaseUser
      */
     protected $groups;
 
-    /**
-     * @ORM\OneToOne(targetEntity="Invitation")
-     * @ORM\JoinColumn(referencedColumnName="code")
-     * @Assert\NotNull(message="Your invitation is wrong", groups={"Registration"})
-     */
-    protected $invitation;
-
     public function __construct()
     {
         parent::__construct();
-    }
-
-    public function setInvitation(Invitation $invitation)
-    {
-        $this->invitation = $invitation;
-    }
-
-    public function getInvitation()
-    {
-        return $this->invitation;
     }
 }
