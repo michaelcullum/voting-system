@@ -34,3 +34,10 @@ app_user_view:
 app_user_view:
     path:      /user/view/{id}
     defaults:  { _controller: AppBundle:User:view }
+
+app_remove_trailing_slash:
+    path: /{url}
+    defaults: { _controller: AppBundle:Redirecting:removeTrailingSlash }
+    requirements:
+        url: .*/$
+    methods: [GET]
