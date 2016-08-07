@@ -18,4 +18,5 @@
 /bin/phpunit
 /bin/security-checker
 /bin/pscss
+/bin/php-cs-fixer
 /web/assets/compiled/*
