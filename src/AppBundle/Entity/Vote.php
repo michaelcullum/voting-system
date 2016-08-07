@@ -62,7 +62,7 @@ class Vote
     /**
      * Constructor
      */
-    function __construct()
+    public function __construct()
     {
         $this->time = new \DateTime();
         $this->weight = 1;

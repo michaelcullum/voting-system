@@ -76,6 +76,7 @@ class Poll
     {
         $this->votes = new ArrayCollection();
         $this->choices = new ArrayCollection();
+        $this->start = new \DateTime();
     }
 
     /**
