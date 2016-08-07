@@ -2,8 +2,8 @@
 
 namespace AppBundle\Controller;
 
-use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\Adapter\ArrayAdapter;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\Pagerfanta;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
