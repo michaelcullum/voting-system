@@ -28,7 +28,7 @@ class ElectionManager
 
     public function getEligibleVoters(): array
     {
-        return []
+        return [];
     }
 
     public function calculateElectionResult(Poll $poll): array

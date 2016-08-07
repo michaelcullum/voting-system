@@ -17,7 +17,7 @@ class VoteController extends Controller
      */
     public function listAction(Request $request): Response
     {
-        $this->pollsManager = $this->get('app.polls_manager');
+        $this->pollsManager = $this->get('app.poll_manager');
 
         $polls = $this->getPolls($request);
         $current = $pollsManager->getCurrentPolls();
@@ -26,11 +26,11 @@ class VoteController extends Controller
     }
 
     /**
-     * @Route("/poll/{id}, name="poll_view")
+     * @Route("/poll/{id}", name="poll_view")
      */
     public function viewAction(Request $request, Poll $poll): Response
     {
-        $pollsMetadata = $this->get('app.polls_manager');
+        $pollsMetadata = $this->get('app.poll_manager');
     }
 
     /**
@@ -41,7 +41,7 @@ class VoteController extends Controller
      */
     protected function getPolls(Request $request): Pagerfanta
     {
-        $polls = $this->get('app.polls_manager')->getAllPolls();
+        $polls = $this->get('app.poll_manager')->getAllPolls();
         $paginator = new Pagerfanta(new ArrayAdapter($polls));
         $paginator->setMaxPerPage(20);
         $paginator->setCurrentPage($request->query->get('page', 1), false, true);
