@@ -2,16 +2,13 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Poll;
 use Pagerfanta\Adapter\ArrayAdapter;
-use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\Pagerfanta;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use AppBundle\Entity\Poll;
 
 class VoteController extends Controller
 {
@@ -33,11 +30,11 @@ class VoteController extends Controller
      */
     protected function getCurrentPolls(): array
     {
-    	$currentPolls = $this->getDoctrine()
-    		->getRepository('AppBundle:Poll')
-    		->findByActive(true);
+        $currentPolls = $this->getDoctrine()
+            ->getRepository('AppBundle:Poll')
+            ->findByActive(true);
 
-    	return $currentPolls;
+        return $currentPolls;
     }
 
     /**
