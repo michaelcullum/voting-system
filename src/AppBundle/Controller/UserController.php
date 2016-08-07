@@ -8,7 +8,6 @@ use Pagerfanta\Pagerfanta;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\AppBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,7 +27,6 @@ class UserController extends Controller
 
     /**
      * @Route("/users/create", name="user_create")
-     * @Security("has_role('ROLE_ADMIN')")
      */
     public function createAction(): Response
     {
@@ -46,14 +44,15 @@ class UserController extends Controller
         $votes = $this->getUserVotes($request, $user);
 
         return $this->render(
-            'user/index.html.twig',
+            'default/index.html.twig',
             ['votes' => $votes, 'user' => $user,]
         );
     }
 
     /**
-     * @param Request $request
+     * Get pagination object of users
      *
+     * @param Request $request
      * @return Pagerfanta
      */
     protected function getUsers(Request $request): Pagerfanta
@@ -69,9 +68,10 @@ class UserController extends Controller
     }
 
     /**
+     * Get pagination object of user votes
+     *
      * @param Request $request
      * @param User    $user
-     *
      * @return Pagerfanta
      */
     protected function getUserVotes(Request $request, User $user): Pagerfanta

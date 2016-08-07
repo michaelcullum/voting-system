@@ -19,6 +19,8 @@ class SmokeTest extends BootstrapTestSuite
             array('/'),
             array('/users'),
             array('/users/', 301),
+            array('/poll'),
+            array('/users/create'),
         );
     }
 }

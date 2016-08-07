@@ -89,12 +89,6 @@ fos_user:
     from_email:
         address:        "%mailer_from%"
         sender_name:    PHP FIG Voting System
-    registration:
-        form:
-            type: AppBundle\Form\RegistrationFormType
-        confirmation:
-            enabled:    true
-            template:   FOSUserBundle:Registration:email.txt.twig
     resetting:
         email:
             template:   FOSUserBundle:Resetting:email.txt.twig

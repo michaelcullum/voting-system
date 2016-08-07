@@ -70,6 +70,13 @@ class Poll
     private $choices;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="active", type="boolean")
+     */
+    private $active;
+
+    /**
      * Constructor.
      */
     public function __construct()
@@ -275,5 +282,29 @@ class Poll
     public function getPollType()
     {
         return $this->pollType;
+    }
+
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     *
+     * @return Poll
+     */
+    public function setActive(bool $active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean
+     */
+    public function getActive(): bool
+    {
+        return $this->active;
     }
 }

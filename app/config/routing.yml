@@ -12,6 +12,11 @@ fos_user_resetting:
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
 
+# TODO: Fix so this is not used
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
 app_remove_trailing_slash:
     path: /{url}
     defaults: { _controller: AppBundle:Redirecting:removeTrailingSlash }
