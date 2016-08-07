@@ -2,9 +2,6 @@
 
 namespace AppBundle\Entity;
 
-use AppBundle\Entity\Choice;
-use AppBundle\Entity\Poll;
-use AppBundle\Entity\User;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -25,7 +22,7 @@ class Vote
     private $id;
 
     /**
-     * @var \Poll
+     * @var \AppBundle\Entity\Poll
      *
      * @ORM\ManyToOne(targetEntity="Poll", inversedBy="votes")
      * @ORM\JoinColumn(name="poll_id", referencedColumnName="id")
@@ -33,7 +30,7 @@ class Vote
     private $poll;
 
     /**
-     * @var \User
+     * @var \AppBundle\Entity\User
      *
      * @ORM\ManyToOne(targetEntity="User", inversedBy="votes")
      * @ORM\JoinColumn(name="caster_id", referencedColumnName="id")
@@ -48,7 +45,7 @@ class Vote
     private $time;
 
     /**
-     * @var \Choice
+     * @var \AppBundle\Entity\Choice
      *
      * @ORM\ManyToOne(targetEntity="Choice", inversedBy="votes")
      * @ORM\JoinColumn(name="choice_id", referencedColumnName="id")
@@ -96,7 +93,7 @@ class Vote
      *
      * @return Vote
      */
-    public function setPoll(Poll $poll = null)
+    public function setPoll(\AppBundle\Entity\Poll $poll = null)
     {
         $this->poll = $poll;
 
@@ -108,7 +105,7 @@ class Vote
      *
      * @return \AppBundle\Entity\Poll
      */
-    public function getPoll(): Poll
+    public function getPoll(): AppBundle\Entity\Poll
     {
         return $this->poll;
     }
@@ -120,7 +117,7 @@ class Vote
      *
      * @return Vote
      */
-    public function setCaster(User $caster = null)
+    public function setCaster(\AppBundle\Entity\User $caster = null)
     {
         $this->caster = $caster;
 
@@ -132,7 +129,7 @@ class Vote
      *
      * @return \AppBundle\Entity\User
      */
-    public function getCaster(): User
+    public function getCaster(): AppBundle\Entity\User
     {
         return $this->caster;
     }
@@ -144,7 +141,7 @@ class Vote
      *
      * @return Vote
      */
-    public function setChoice(Choice $choice = null)
+    public function setChoice(\AppBundle\Entity\Choice $choice = null)
     {
         $this->choice = $choice;
 
@@ -156,7 +153,7 @@ class Vote
      *
      * @return \AppBundle\Entity\Choice
      */
-    public function getChoice(): Choice
+    public function getChoice(): AppBundle\Entity\Choice
     {
         return $this->choice;
     }

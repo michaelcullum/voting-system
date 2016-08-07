@@ -5,7 +5,6 @@ namespace AppBundle\Entity;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use AppBundle\Entity\Poll;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
@@ -87,7 +86,7 @@ class User extends BaseUser
      *
      * @return User
      */
-    public function addCreatedPoll(Poll $createdPoll)
+    public function addCreatedPoll(\AppBundle\Entity\Poll $createdPoll)
     {
         $this->createdPolls[] = $createdPoll;
 
@@ -99,7 +98,7 @@ class User extends BaseUser
      *
      * @param \AppBundle\Entity\Poll $createdPoll
      */
-    public function removeCreatedPoll(Poll $createdPoll)
+    public function removeCreatedPoll(\AppBundle\Entity\Poll $createdPoll)
     {
         $this->createdPolls->removeElement($createdPoll);
     }
@@ -121,7 +120,7 @@ class User extends BaseUser
      *
      * @return User
      */
-    public function addVote(Vote $vote)
+    public function addVote(\AppBundle\Entity\Vote $vote)
     {
         $this->votes[] = $vote;
 
@@ -133,7 +132,7 @@ class User extends BaseUser
      *
      * @param \AppBundle\Entity\Vote $vote
      */
-    public function removeVote(Vote $vote)
+    public function removeVote(\AppBundle\Entity\Vote $vote)
     {
         $this->votes->removeElement($vote);
     }

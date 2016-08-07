@@ -3,7 +3,6 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use AppBundle\Entity\Vote;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
@@ -84,7 +83,7 @@ class Choice
      *
      * @return Choice
      */
-    public function addVote(Vote $vote)
+    public function addVote(\AppBundle\Entity\Vote $vote)
     {
         $this->votes[] = $vote;
 
@@ -96,7 +95,7 @@ class Choice
      *
      * @param \AppBundle\Entity\Vote $vote
      */
-    public function removeVote(Vote $vote)
+    public function removeVote(\AppBundle\Entity\Vote $vote)
     {
         $this->votes->removeElement($vote);
     }

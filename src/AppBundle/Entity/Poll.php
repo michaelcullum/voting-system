@@ -2,8 +2,6 @@
 
 namespace AppBundle\Entity;
 
-use AppBundle\Entity\User;
-use AppBundle\Entity\Vote;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -39,7 +37,7 @@ class Poll
     private $start;
 
     /**
-     * @var \User
+     * @var \AppBundle\Entity\User
      *
      * @ORM\ManyToOne(targetEntity="User", inversedBy="createdPolls")
      * @ORM\JoinColumn(name="creator_id", referencedColumnName="id")
@@ -47,7 +45,7 @@ class Poll
     private $creator;
 
     /**
-     * @var \PollType
+     * @var \AppBundle\Entity\PollType
      *
      * @ORM\ManyToOne(targetEntity="PollType", inversedBy="polls")
      * @ORM\JoinColumn(name="poll_type_id", referencedColumnName="id")
@@ -121,7 +119,7 @@ class Poll
      *
      * @return Poll
      */
-    public function setStart(\DateTimeInterface $start)
+    public function setStart(\DateTime $start)
     {
         $this->start = $start;
 
@@ -169,7 +167,7 @@ class Poll
      *
      * @return Poll
      */
-    public function setCreator(User $creator = null)
+    public function setCreator(\AppBundle\Entity\User $creator = null)
     {
         $this->creator = $creator;
 
@@ -181,7 +179,7 @@ class Poll
      *
      * @return \AppBundle\Entity\User
      */
-    public function getCreator(): User
+    public function getCreator(): AppBundle\Entity\User
     {
         return $this->creator;
     }
@@ -193,7 +191,7 @@ class Poll
      *
      * @return Poll
      */
-    public function addVote(Vote $vote)
+    public function addVote(\AppBundle\Entity\Vote $vote)
     {
         $this->votes[] = $vote;
 
@@ -205,7 +203,7 @@ class Poll
      *
      * @param \AppBundle\Entity\Vote $vote
      */
-    public function removeVote(Vote $vote)
+    public function removeVote(\AppBundle\Entity\Vote $vote)
     {
         $this->votes->removeElement($vote);
     }
@@ -227,7 +225,7 @@ class Poll
      *
      * @return Poll
      */
-    public function addChoice(Choice $choice)
+    public function addChoice(\AppBundle\Entity\Choice $choice)
     {
         $this->choices[] = $choice;
 
@@ -239,7 +237,7 @@ class Poll
      *
      * @param \AppBundle\Entity\Choice $choice
      */
-    public function removeChoice(Choice $choice)
+    public function removeChoice(\AppBundle\Entity\Choice $choice)
     {
         $this->choices->removeElement($choice);
     }

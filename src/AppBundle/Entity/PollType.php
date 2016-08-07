@@ -4,7 +4,6 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
-use AppBundle\Entity\Poll;
 
 /**
  * PollType
@@ -84,7 +83,7 @@ class PollType
      *
      * @return PollType
      */
-    public function addPoll(Poll $poll)
+    public function addPoll(\AppBundle\Entity\Poll $poll)
     {
         $this->polls[] = $poll;
 
@@ -96,7 +95,7 @@ class PollType
      *
      * @param \AppBundle\Entity\Poll $poll
      */
-    public function removePoll(Poll $poll)
+    public function removePoll(\AppBundle\Entity\Poll $poll)
     {
         $this->polls->removeElement($poll);
     }
