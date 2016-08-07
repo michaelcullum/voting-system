@@ -6,7 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Poll
+ * Poll.
  *
  * @ORM\Table(name="polls")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PollRepository")
@@ -70,7 +70,7 @@ class Poll
     private $choices;
 
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -79,9 +79,9 @@ class Poll
     }
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId(): int
     {
@@ -89,7 +89,7 @@ class Poll
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -103,7 +103,7 @@ class Poll
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -113,7 +113,7 @@ class Poll
     }
 
     /**
-     * Set start
+     * Set start.
      *
      * @param \DateTime $start
      *
@@ -127,7 +127,7 @@ class Poll
     }
 
     /**
-     * Get start
+     * Get start.
      *
      * @return \DateTime
      */
@@ -137,7 +137,7 @@ class Poll
     }
 
     /**
-     * Set description
+     * Set description.
      *
      * @param string $description
      *
@@ -151,7 +151,7 @@ class Poll
     }
 
     /**
-     * Get description
+     * Get description.
      *
      * @return string
      */
@@ -161,7 +161,7 @@ class Poll
     }
 
     /**
-     * Set creator
+     * Set creator.
      *
      * @param \AppBundle\Entity\User $creator
      *
@@ -175,7 +175,7 @@ class Poll
     }
 
     /**
-     * Get creator
+     * Get creator.
      *
      * @return \AppBundle\Entity\User
      */
@@ -185,7 +185,7 @@ class Poll
     }
 
     /**
-     * Add vote
+     * Add vote.
      *
      * @param \AppBundle\Entity\Vote $vote
      *
@@ -199,7 +199,7 @@ class Poll
     }
 
     /**
-     * Remove vote
+     * Remove vote.
      *
      * @param \AppBundle\Entity\Vote $vote
      */
@@ -209,7 +209,7 @@ class Poll
     }
 
     /**
-     * Get votes
+     * Get votes.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -219,7 +219,7 @@ class Poll
     }
 
     /**
-     * Add choice
+     * Add choice.
      *
      * @param \AppBundle\Entity\Choice $choice
      *
@@ -233,7 +233,7 @@ class Poll
     }
 
     /**
-     * Remove choice
+     * Remove choice.
      *
      * @param \AppBundle\Entity\Choice $choice
      */
@@ -243,7 +243,7 @@ class Poll
     }
 
     /**
-     * Get choices
+     * Get choices.
      *
      * @return \Doctrine\Common\Collections\Collection
      */

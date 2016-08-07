@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * Choice
+ * Choice.
  *
  * @ORM\Table(name="choices")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ChoiceRepository")
@@ -35,7 +35,7 @@ class Choice
     private $votes;
 
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -43,9 +43,9 @@ class Choice
     }
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId(): int
     {
@@ -53,7 +53,7 @@ class Choice
     }
 
     /**
-     * Set choiceName
+     * Set choiceName.
      *
      * @param string $choiceName
      *
@@ -67,7 +67,7 @@ class Choice
     }
 
     /**
-     * Get choiceName
+     * Get choiceName.
      *
      * @return string
      */
@@ -77,7 +77,7 @@ class Choice
     }
 
     /**
-     * Add vote
+     * Add vote.
      *
      * @param \AppBundle\Entity\Vote $vote
      *
@@ -91,7 +91,7 @@ class Choice
     }
 
     /**
-     * Remove vote
+     * Remove vote.
      *
      * @param \AppBundle\Entity\Vote $vote
      */
@@ -101,7 +101,7 @@ class Choice
     }
 
     /**
-     * Get votes
+     * Get votes.
      *
      * @return \Doctrine\Common\Collections\Collection
      */

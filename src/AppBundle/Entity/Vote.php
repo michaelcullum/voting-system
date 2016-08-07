@@ -5,7 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Vote
+ * Vote.
  *
  * @ORM\Table(name="votes")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\VoteRepository")
@@ -53,9 +53,9 @@ class Vote
     private $choice;
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId(): int
     {
@@ -63,7 +63,7 @@ class Vote
     }
 
     /**
-     * Set time
+     * Set time.
      *
      * @param \DateTime $time
      *
@@ -77,7 +77,7 @@ class Vote
     }
 
     /**
-     * Get time
+     * Get time.
      *
      * @return \DateTime
      */
@@ -87,7 +87,7 @@ class Vote
     }
 
     /**
-     * Set poll
+     * Set poll.
      *
      * @param \AppBundle\Entity\Poll $poll
      *
@@ -101,7 +101,7 @@ class Vote
     }
 
     /**
-     * Get poll
+     * Get poll.
      *
      * @return \AppBundle\Entity\Poll
      */
@@ -111,7 +111,7 @@ class Vote
     }
 
     /**
-     * Set caster
+     * Set caster.
      *
      * @param \AppBundle\Entity\User $caster
      *
@@ -125,7 +125,7 @@ class Vote
     }
 
     /**
-     * Get caster
+     * Get caster.
      *
      * @return \AppBundle\Entity\User
      */
@@ -135,7 +135,7 @@ class Vote
     }
 
     /**
-     * Set choice
+     * Set choice.
      *
      * @param \AppBundle\Entity\Choice $choice
      *
@@ -149,7 +149,7 @@ class Vote
     }
 
     /**
-     * Get choice
+     * Get choice.
      *
      * @return \AppBundle\Entity\Choice
      */

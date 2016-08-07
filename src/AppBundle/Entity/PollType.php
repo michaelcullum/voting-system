@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * PollType
+ * PollType.
  *
  * @ORM\Table(name="poll_type")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PollTypeRepository")
@@ -35,7 +35,7 @@ class PollType
     private $polls;
 
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -43,7 +43,7 @@ class PollType
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -53,7 +53,7 @@ class PollType
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -67,7 +67,7 @@ class PollType
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -77,7 +77,7 @@ class PollType
     }
 
     /**
-     * Add poll
+     * Add poll.
      *
      * @param \AppBundle\Entity\Poll $poll
      *
@@ -91,7 +91,7 @@ class PollType
     }
 
     /**
-     * Remove poll
+     * Remove poll.
      *
      * @param \AppBundle\Entity\Poll $poll
      */
@@ -101,7 +101,7 @@ class PollType
     }
 
     /**
-     * Get polls
+     * Get polls.
      *
      * @return \Doctrine\Common\Collections\Collection
      */

@@ -2,7 +2,8 @@
 
 namespace AppBundle\Controller;
 
-use Pagerfanta\Adapter\{DoctrineORMAdapter, ArrayAdapter};
+use Pagerfanta\Adapter\DoctrineORMAdapter;
+use Pagerfanta\Adapter\ArrayAdapter;
 use Pagerfanta\Pagerfanta;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -71,7 +72,7 @@ class UserController extends Controller
 
     /**
      * @param Request $request
-     * @param User $user
+     * @param User    $user
      *
      * @return Pagerfanta
      */
