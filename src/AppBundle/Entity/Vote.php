@@ -181,7 +181,7 @@ class Vote
      *
      * @return Vote
      */
-    public function setWeight($weight)
+    public function setWeight(int $weight)
     {
         $this->weight = $weight;
 
@@ -193,7 +193,7 @@ class Vote
      *
      * @return integer
      */
-    public function getWeight()
+    public function getWeight(): int
     {
         return $this->weight;
     }
