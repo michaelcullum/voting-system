@@ -19,9 +19,9 @@ class UserController extends Controller
      * @Template()
      * @Route("/users", name="user")
      */
-    public function listAction(): Response
+    public function listAction(Request $request): Response
     {
-        $users = $this->getUsers($request);
+        $users = $this->getUserVotes($request);
 
         return $this->render('default/index.html.twig', ['users' => $users]);
     }
