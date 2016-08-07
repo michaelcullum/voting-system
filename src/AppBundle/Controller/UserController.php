@@ -21,7 +21,7 @@ class UserController extends Controller
      */
     public function listAction(Request $request): Response
     {
-        $users = $this->getUserVotes($request);
+        $users = $this->getUsers($request);
 
         return $this->render('default/index.html.twig', ['users' => $users]);
     }
@@ -60,8 +60,9 @@ class UserController extends Controller
     protected function getUsers(Request $request): Pagerfanta
     {
         $users = $this->getDoctrine()
-            ->getRepository('AppBundle:User');
-        $paginator = new Pagerfanta(new DoctrineORMAdapter($users, true));
+            ->getRepository('AppBundle:User')
+            ->findAll();
+        $paginator = new Pagerfanta(new ArrayAdapter($users));
         $paginator->setMaxPerPage(20);
         $paginator->setCurrentPage($request->query->get('page', 1), false, true);
 
@@ -77,7 +78,7 @@ class UserController extends Controller
     protected function getUserVotes(Request $request, User $user): Pagerfanta
     {
         $votes = $this->getDoctrine()
-            ->getRepository('AppBundle:VoteInstances') // TODO: We won't do this?
+            ->getRepository('AppBundle:Votes') // TODO: We won't do this?
             ->getFilteredQueryBuilder(array('voter' => $user->getId()), true);
         $paginator = new Pagerfanta(new DoctrineORMAdapter($votes, true));
         $paginator->setMaxPerPage(20);
