@@ -41,7 +41,7 @@ class Poll
     /**
      * @var \User
      *
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="polls")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="createdPolls")
      * @ORM\JoinColumn(name="creator_id", referencedColumnName="id")
      */
     private $creator;
