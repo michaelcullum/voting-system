@@ -17,7 +17,6 @@ use Symfony\Component\HttpFoundation\Response;
 class UserController extends Controller
 {
     /**
-     * @Template()
      * @Route("/users", name="user")
      */
     public function listAction(Request $request): Response
