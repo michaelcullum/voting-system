@@ -2,11 +2,10 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-use AppBundle\Entity\User;
-use AppBundle\Entity\Poll;
 use AppBundle\Entity\Choice;
-use Doctrine\Common\Collections\ArrayCollection;
+use AppBundle\Entity\Poll;
+use AppBundle\Entity\User;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Vote
