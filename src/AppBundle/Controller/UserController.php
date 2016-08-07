@@ -19,23 +19,23 @@ class UserController extends Controller
      * @Template()
      * @Route("/users", name="user")
      */
-	public function listAction(): Response
-	{
-		$users = $this->getUsers($request);
+    public function listAction(): Response
+    {
+        $users = $this->getUsers($request);
 
-		return $this->render('default/index.html.twig', ['users' => $users]);
-	}
+        return $this->render('default/index.html.twig', ['users' => $users]);
+    }
 
-	/**
-	 * @Route("/users/create", name="user_create")
+    /**
+     * @Route("/users/create", name="user_create")
      * @Security("has_role('ROLE_ADMIN')")
-	 */
-	public function createAction(): Response
-	{
-		$response = $this->forward('FOSUserBundle:Registration:register');
+     */
+    public function createAction(): Response
+    {
+        $response = $this->forward('FOSUserBundle:Registration:register');
 
-		return $response;
-	}
+        return $response;
+    }
 
     /**
      * @Template()
