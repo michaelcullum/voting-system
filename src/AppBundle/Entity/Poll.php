@@ -252,4 +252,28 @@ class Poll
     {
         return $this->choices;
     }
+
+    /**
+     * Set pollType
+     *
+     * @param \AppBundle\Entity\PollType $pollType
+     *
+     * @return Poll
+     */
+    public function setPollType(\AppBundle\Entity\PollType $pollType = null)
+    {
+        $this->pollType = $pollType;
+
+        return $this;
+    }
+
+    /**
+     * Get pollType
+     *
+     * @return \AppBundle\Entity\PollType
+     */
+    public function getPollType()
+    {
+        return $this->pollType;
+    }
 }
