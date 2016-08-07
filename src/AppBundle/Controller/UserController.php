@@ -39,7 +39,6 @@ class UserController extends Controller
     }
 
     /**
-     * @Template()
      * @Route("/users/{name}", name="user_profile")
      * @ParamConverter("user", options={"mapping": {"name": "username"}})
      */
@@ -47,9 +46,9 @@ class UserController extends Controller
     {
         $votes = $this->getUserVotes($request, $user);
 
-        return array(
-            'votes' => $votes,
-            'user' => $user,
+        return $this->render(
+            'user/index.html.twig',
+            ['votes' => $votes, 'user' => $user,]
         );
     }
 
