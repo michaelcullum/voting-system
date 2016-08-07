@@ -17,7 +17,7 @@ class VoteController extends Controller
      */
     public function listAction(Request $request): Response
     {
-        $this->pollsManager = $this->get('app.poll_manager');
+        $pollsManager = $this->get('app.poll_manager');
 
         $polls = $this->getPolls($request);
         $current = $pollsManager->getCurrentPolls();
