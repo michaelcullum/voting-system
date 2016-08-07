@@ -173,4 +173,28 @@ class Vote
     {
         return $this->choice;
     }
+
+    /**
+     * Set weight
+     *
+     * @param integer $weight
+     *
+     * @return Vote
+     */
+    public function setWeight($weight)
+    {
+        $this->weight = $weight;
+
+        return $this;
+    }
+
+    /**
+     * Get weight
+     *
+     * @return integer
+     */
+    public function getWeight()
+    {
+        return $this->weight;
+    }
 }
