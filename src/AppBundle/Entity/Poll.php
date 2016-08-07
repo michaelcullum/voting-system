@@ -77,6 +77,20 @@ class Poll
     private $active;
 
     /**
+     * @var \AppBundle\Entity\Choice
+     *
+     * @ORM\ManyToOne(targetEntity="Choice")
+     * @ORM\JoinColumn(name="burden_id", referencedColumnName="id")
+     */
+    private $burden;
+
+    // Collection of Users who were eligible to vote
+    private $eligibleVoters;
+
+    // Number of winners. Nullable as elections only
+    private $winners;
+
+    /**
      * Constructor.
      */
     public function __construct()

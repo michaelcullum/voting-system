@@ -1,2 +1,11 @@
 services:
+  app.poll_manager:
+    class:  AppBundle\Utils\PollManager
+    arguments:
+        entityManager: "@doctrine.orm.entity_manager"
+        electionManager: "@app.election_manager"
 
+  app.election_manager:
+    class:  AppBundle\Utils\ElectionManager
+    arguments:
+        entityManager: "@doctrine.orm.entity_manager"

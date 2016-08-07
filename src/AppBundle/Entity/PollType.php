@@ -35,6 +35,22 @@ class PollType
     private $polls;
 
     /**
+     * @var float
+     *
+     * @ORM\Column(name="quorum", type="float")
+     */
+    private $quorum;
+
+    private $electorateGroup;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="majority", type="float")
+     */
+    private $majority;
+
+    /**
      * Constructor.
      */
     public function __construct()
