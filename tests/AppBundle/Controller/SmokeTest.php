@@ -16,6 +16,8 @@ class SmokeTest extends BootstrapTestSuite
 	{
 		return array(
 			array('/'),
+			array('/users'),
+			array('/users/', 301),
 		);
 	}
 }
