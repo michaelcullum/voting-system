@@ -69,7 +69,7 @@ class Vote
      *
      * @return Vote
      */
-    public function setTime(\DateTimeInterface $time)
+    public function setTime(\DateTime $time)
     {
         $this->time = $time;
 
