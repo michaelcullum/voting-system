@@ -22,6 +22,13 @@ class Vote
     private $id;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="weight", type="integer")
+     */
+    private $weight;
+
+    /**
      * @var \AppBundle\Entity\Poll
      *
      * @ORM\ManyToOne(targetEntity="Poll", inversedBy="votes")
@@ -51,6 +58,15 @@ class Vote
      * @ORM\JoinColumn(name="choice_id", referencedColumnName="id")
      */
     private $choice;
+
+    /**
+     * Constructor
+     */
+    function __construct()
+    {
+        $this->time = new \DateTime();
+        $this->weight = 1;
+    }
 
     /**
      * Get id.
