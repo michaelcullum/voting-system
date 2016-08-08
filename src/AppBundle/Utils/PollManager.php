@@ -2,8 +2,8 @@
 
 namespace AppBundle\Utils;
 
-use Doctrine\ORM\EntityManager;
 use AppBundle\Entity\Poll;
+use Doctrine\ORM\EntityManager;
 
 class PollManager
 {
@@ -11,19 +11,19 @@ class PollManager
     protected $pollRepo;
     protected $electionManager;
 
-	/**
-	 * Constructor
-	 *
-	 * @param EntityManager $entityManager
-	 */
-	public function __construct(EntityManager $entityManager, ElectionManager $electionManager)
-	{
-		$this->entityManager = $entityManager;
-		$this->repo = $this->entityManager->getRepository('AppBundle:Poll');
+    /**
+     * Constructor
+     *
+     * @param EntityManager $entityManager
+     */
+    public function __construct(EntityManager $entityManager, ElectionManager $electionManager)
+    {
+        $this->entityManager = $entityManager;
+        $this->repo = $this->entityManager->getRepository('AppBundle:Poll');
         $this->electionManager = $electionManager;
-	}
+    }
 
-	/**
+    /**
      * Get an array of current polls (objects)
      *
      * @return array
@@ -43,7 +43,7 @@ class PollManager
      */
     public function getEligibleVoters(PollType $type): array
     {
-    	return [];
+        return [];
     }
 
     /**
@@ -53,9 +53,9 @@ class PollManager
      */
     public function getAllPolls(): array
     {
-    	$polls = $this->repo->findAll();
+        $polls = $this->repo->findAll();
 
-    	return $polls;
+        return $polls;
     }
 
     /**
@@ -66,10 +66,10 @@ class PollManager
      */
     public function getPollStats(Poll $poll): array
     {
-    	// If Poll is election then reject
+        // If Poll is election then reject
 
-    	// Get standard stats
-    	return [];
+        // Get standard stats
+        return [];
     }
 
     /**
@@ -80,19 +80,19 @@ class PollManager
      */
     public function getPollResult(Poll $poll): Choice
     {
-    	// If election then call Election Manager
+        // If election then call Election Manager
 
-    	// Calculate winning choice
-    	return;
+        // Calculate winning choice
+        return;
     }
 
     public function getStandardPollVotes(Poll $poll): array
     {
-    	return [];
+        return [];
     }
 
     public function markPollClosed(Poll $poll)
     {
-    	return;
+        return;
     }
 }
