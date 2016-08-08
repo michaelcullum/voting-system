@@ -2,8 +2,8 @@
 
 namespace AppBundle\Utils;
 
-use Doctrine\ORM\EntityManager;
 use AppBundle\Entity\Poll;
+use Doctrine\ORM\EntityManager;
 
 class ElectionManager
 {
@@ -33,7 +33,7 @@ class ElectionManager
 
     public function calculateElectionResult(Poll $poll): array
     {
-    	return getElectionResults($poll);
+        return getElectionResults($poll);
     }
 
     public function submitVotes(array $choices)
@@ -43,12 +43,12 @@ class ElectionManager
 
     public function getElectionPollVotes(Poll $poll): array
     {
-    	return [];
+        return [];
     }
 
     public function getElectionResults(Poll $poll): array
     {
-    	return [];
+        return [];
     }
 
     public function getElectionWinner(Poll $poll): AppBundle\Entity\Choice
