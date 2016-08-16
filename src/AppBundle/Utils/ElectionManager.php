@@ -11,7 +11,7 @@ class ElectionManager
     protected $pollRepo;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param EntityManager $entityManager
      */

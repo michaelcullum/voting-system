@@ -34,9 +34,10 @@ class VoteController extends Controller
     }
 
     /**
-     * Get pagination object of Polls
+     * Get pagination object of Polls.
      *
      * @param Request $request
+     *
      * @return Pagerfanta
      */
     protected function getPolls(Request $request): Pagerfanta

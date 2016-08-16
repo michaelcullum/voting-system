@@ -12,7 +12,7 @@ class PollManager
     protected $electionManager;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param EntityManager $entityManager
      */
@@ -24,7 +24,7 @@ class PollManager
     }
 
     /**
-     * Get an array of current polls (objects)
+     * Get an array of current polls (objects).
      *
      * @return array
      */
@@ -36,9 +36,10 @@ class PollManager
     }
 
     /**
-     * Get an array of eligible votes
+     * Get an array of eligible votes.
      *
-     * @param  AppBundle/Entity/PollType $type
+     * @param AppBundle/Entity/PollType $type
+     *
      * @return array
      */
     public function getEligibleVoters(PollType $type): array
@@ -47,7 +48,7 @@ class PollManager
     }
 
     /**
-     * Get an array of all polls (objects)
+     * Get an array of all polls (objects).
      *
      * @return array
      */
@@ -59,9 +60,10 @@ class PollManager
     }
 
     /**
-     * Get poll statistics
+     * Get poll statistics.
      *
-     * @param  Poll   $poll
+     * @param Poll $poll
+     *
      * @return array
      */
     public function getPollStats(Poll $poll): array
@@ -73,9 +75,10 @@ class PollManager
     }
 
     /**
-     * Get the result of the poll (in terms of a choice)
+     * Get the result of the poll (in terms of a choice).
      *
-     * @param  Poll   $poll
+     * @param Poll $poll
+     *
      * @return AppBundle/Entity/Choice
      */
     public function getPollResult(Poll $poll): Choice

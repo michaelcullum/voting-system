@@ -44,14 +44,15 @@ class UserController extends Controller
 
         return $this->render(
             'default/index.html.twig',
-            ['votes' => $votes, 'user' => $user,]
+            ['votes' => $votes, 'user' => $user]
         );
     }
 
     /**
-     * Get pagination object of users
+     * Get pagination object of users.
      *
      * @param Request $request
+     *
      * @return Pagerfanta
      */
     protected function getUsers(Request $request): Pagerfanta
@@ -67,10 +68,11 @@ class UserController extends Controller
     }
 
     /**
-     * Get pagination object of user votes
+     * Get pagination object of user votes.
      *
      * @param Request $request
      * @param User    $user
+     *
      * @return Pagerfanta
      */
     protected function getUserVotes(Request $request, User $user): Pagerfanta

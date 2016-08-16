@@ -60,7 +60,7 @@ class Vote
     private $choice;
 
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -175,9 +175,9 @@ class Vote
     }
 
     /**
-     * Set weight
+     * Set weight.
      *
-     * @param integer $weight
+     * @param int $weight
      *
      * @return Vote
      */
@@ -189,9 +189,9 @@ class Vote
     }
 
     /**
-     * Get weight
+     * Get weight.
      *
-     * @return integer
+     * @return int
      */
     public function getWeight(): int
     {

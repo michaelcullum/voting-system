@@ -70,7 +70,7 @@ class Poll
     private $choices;
 
     /**
-     * @var boolean
+     * @var bool
      *
      * @ORM\Column(name="active", type="boolean")
      */
@@ -275,7 +275,7 @@ class Poll
     }
 
     /**
-     * Set pollType
+     * Set pollType.
      *
      * @param \AppBundle\Entity\PollType $pollType
      *
@@ -289,7 +289,7 @@ class Poll
     }
 
     /**
-     * Get pollType
+     * Get pollType.
      *
      * @return \AppBundle\Entity\PollType
      */
@@ -299,9 +299,9 @@ class Poll
     }
 
     /**
-     * Set active
+     * Set active.
      *
-     * @param boolean $active
+     * @param bool $active
      *
      * @return Poll
      */
@@ -313,9 +313,9 @@ class Poll
     }
 
     /**
-     * Get active
+     * Get active.
      *
-     * @return boolean
+     * @return bool
      */
     public function getActive(): bool
     {
