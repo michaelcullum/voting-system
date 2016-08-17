@@ -20,3 +20,4 @@
 /bin/pscss
 /bin/php-cs-fixer
 /web/assets/compiled/*
+composer.lock
