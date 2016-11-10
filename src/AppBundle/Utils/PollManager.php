@@ -38,7 +38,7 @@ class PollManager
      */
     public function getCurrentPolls(): array
     {
-        $currentPolls = $this->doctrineRegistry->getEntityManager()->getRepository('AppBundle:Poll')->findByActive(true);
+	    $currentPolls = $this->doctrineRegistry->getManager()->getRepository('AppBundle:Poll')->findByActive(true);
 
         return $currentPolls;
     }
@@ -62,7 +62,7 @@ class PollManager
      */
     public function getAllPolls(): array
     {
-	    $polls = $this->doctrineRegistry->getEntityManager()->getRepository('AppBundle:Poll')->findAll();
+	    $polls = $this->doctrineRegistry->getManager()->getRepository('AppBundle:Poll')->findAll();
 
         return $polls;
     }
