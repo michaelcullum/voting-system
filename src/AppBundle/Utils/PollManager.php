@@ -24,6 +24,13 @@ class PollManager
         $this->electionManager = $electionManager;
     }
 
+	public function getPolls($sort, boolean $current = false): array
+	{
+		if ($current) {
+			return $this->getCurrentPolls();
+		}
+	}
+
     /**
      * Get an array of current polls (objects).
      *

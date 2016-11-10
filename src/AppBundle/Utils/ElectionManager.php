@@ -9,7 +9,7 @@ use Doctrine\Common\Persistence\ManagerRegistry;
 
 class ElectionManager
 {
-	protected $doctrineRegistry;
+	private $doctrineRegistry;
 
 	/**
 	 * Constructor.

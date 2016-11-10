@@ -1,11 +1,14 @@
 services:
   app.poll_manager:
     class:  AppBundle\Utils\PollManager
-    arguments:
-        entityManager: "@doctrine.orm.entity_manager"
-        electionManager: "@app.election_manager"
+    arguments: ["@doctrine", "@app.election_manager"]
 
   app.election_manager:
     class:  AppBundle\Utils\ElectionManager
-    arguments:
-        entityManager: "@doctrine.orm.entity_manager"
+    arguments: ["@doctrine"]
+
+  app.controller.vote_controller:
+      class: AppBundle\Controller\VoteController
+      arguments: ['@app.poll_manager', '@app.election_manager']
+      calls:
+          - [setContainer, ['@service_container']]
