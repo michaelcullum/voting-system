@@ -7,19 +7,17 @@ use Doctrine\ORM\EntityManager;
 
 class PollManager
 {
-    protected $entityManager;
-    protected $pollRepo;
+    protected $doctrineRegistry;
     protected $electionManager;
 
-    /**
+	/**
      * Constructor.
      *
      * @param EntityManager $entityManager
      */
-    public function __construct(EntityManager $entityManager, ElectionManager $electionManager)
+    public function __construct(Registry $doctrineRegistry, ElectionManager $electionManager)
     {
-        $this->entityManager = $entityManager;
-        $this->repo = $this->entityManager->getRepository('AppBundle:Poll');
+        $this->doctrineRegistry = $doctrineRegistry;
         $this->electionManager = $electionManager;
     }
 
@@ -30,7 +28,7 @@ class PollManager
      */
     public function getCurrentPolls(): array
     {
-        $currentPolls = $this->repo->findByActive(true);
+        $currentPolls = $this->doctrineRegistry->getEntityManager()->getRepository('AppBundle:Poll')->findByActive(true);
 
         return $currentPolls;
     }
