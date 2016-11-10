@@ -2,23 +2,23 @@
 
 namespace AppBundle\Utils;
 
-use AppBundle\Entity\Poll;
-use Doctrine\ORM\EntityManager;
+use AppBundle\Entity\{
+	Choice, Poll
+};
+use Doctrine\Common\Persistence\ManagerRegistry;
 
 class ElectionManager
 {
-    protected $entityManager;
-    protected $pollRepo;
+	protected $doctrineRegistry;
 
-    /**
-     * Constructor.
-     *
-     * @param EntityManager $entityManager
-     */
-    public function __construct(EntityManager $entityManager)
+	/**
+	 * Constructor.
+	 *
+	 * @param \Doctrine\Common\Persistence\ManagerRegistry $doctrineRegistry
+	 */
+	public function __construct(ManagerRegistry $doctrineRegistry)
     {
-        $this->entityManager = $entityManager;
-        $this->pollRepo = $this->entityManager->getRepository('AppBundle:Poll');
+	    $this->doctrineRegistry = $doctrineRegistry;
     }
 
     public function isElection(Poll $poll): boolean
@@ -33,8 +33,13 @@ class ElectionManager
 
     public function calculateElectionResult(Poll $poll): array
     {
-        return getElectionResults($poll);
+	    return $this->getElectionResults($poll);
     }
+
+	public function getElectionResults(Poll $poll): array
+	{
+		return [];
+	}
 
     public function submitVotes(array $choices)
     {
@@ -46,12 +51,7 @@ class ElectionManager
         return [];
     }
 
-    public function getElectionResults(Poll $poll): array
-    {
-        return [];
-    }
-
-    public function getElectionWinner(Poll $poll): AppBundle\Entity\Choice
+	public function getElectionWinner(Poll $poll): Choice
     {
         return;
     }

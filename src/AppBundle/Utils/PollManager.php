@@ -2,8 +2,10 @@
 
 namespace AppBundle\Utils;
 
-use AppBundle\Entity\Poll;
-use Doctrine\ORM\EntityManager;
+use AppBundle\Entity\{
+	Choice, Poll, PollType
+};
+use Doctrine\Common\Persistence\ManagerRegistry;
 
 class PollManager
 {
@@ -11,11 +13,12 @@ class PollManager
     protected $electionManager;
 
 	/**
-     * Constructor.
-     *
-     * @param EntityManager $entityManager
-     */
-    public function __construct(Registry $doctrineRegistry, ElectionManager $electionManager)
+	 * Constructor.
+	 *
+	 * @param \Doctrine\Common\Persistence\ManagerRegistry $doctrineRegistry
+	 * @param \AppBundle\Utils\ElectionManager             $electionManager
+	 */
+	public function __construct(ManagerRegistry $doctrineRegistry, ElectionManager $electionManager)
     {
         $this->doctrineRegistry = $doctrineRegistry;
         $this->electionManager = $electionManager;
@@ -52,7 +55,7 @@ class PollManager
      */
     public function getAllPolls(): array
     {
-        $polls = $this->repo->findAll();
+	    $polls = $this->doctrineRegistry->getEntityManager()->getRepository('AppBundle:Poll')->findAll();
 
         return $polls;
     }
@@ -72,13 +75,13 @@ class PollManager
         return [];
     }
 
-    /**
-     * Get the result of the poll (in terms of a choice).
-     *
-     * @param Poll $poll
-     *
-     * @return AppBundle/Entity/Choice
-     */
+	/**
+	 * Get the result of the poll (in terms of a choice).
+	 *
+	 * @param Poll $poll
+	 *
+	 * @return \AppBundle\Entity\Choice
+	 */
     public function getPollResult(Poll $poll): Choice
     {
         // If election then call Election Manager
