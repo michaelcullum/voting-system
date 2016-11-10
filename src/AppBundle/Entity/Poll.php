@@ -111,6 +111,16 @@ class Poll
     }
 
     /**
+     * Get name.
+     *
+     * @return string
+     */
+	public function getName(): string
+	{
+		return $this->name;
+	}
+
+	/**
      * Set name.
      *
      * @param string $name
@@ -125,13 +135,13 @@ class Poll
     }
 
     /**
-     * Get name.
+     * Get start.
      *
-     * @return string
+     * @return \DateTime
      */
-    public function getName(): string
+	public function getStart(): DateTime
     {
-        return $this->name;
+	    return $this->start;
     }
 
     /**
@@ -149,13 +159,13 @@ class Poll
     }
 
     /**
-     * Get start.
+     * Get description.
      *
-     * @return \DateTime
+     * @return string
      */
-    public function getStart(): DateTime
+	public function getDescription(): string
     {
-        return $this->start;
+	    return $this->description;
     }
 
     /**
@@ -173,13 +183,13 @@ class Poll
     }
 
     /**
-     * Get description.
+     * Get creator.
      *
-     * @return string
+     * @return \AppBundle\Entity\User
      */
-    public function getDescription(): string
+	public function getCreator(): \AppBundle\Entity\User
     {
-        return $this->description;
+	    return $this->creator;
     }
 
     /**
@@ -194,16 +204,6 @@ class Poll
         $this->creator = $creator;
 
         return $this;
-    }
-
-    /**
-     * Get creator.
-     *
-     * @return \AppBundle\Entity\User
-     */
-    public function getCreator(): AppBundle\Entity\User
-    {
-        return $this->creator;
     }
 
     /**
@@ -275,6 +275,16 @@ class Poll
     }
 
     /**
+     * Get pollType.
+     *
+     * @return \AppBundle\Entity\PollType
+     */
+	public function getPollType()
+	{
+		return $this->pollType;
+	}
+
+	/**
      * Set pollType.
      *
      * @param \AppBundle\Entity\PollType $pollType
@@ -289,13 +299,13 @@ class Poll
     }
 
     /**
-     * Get pollType.
+     * Get active.
      *
-     * @return \AppBundle\Entity\PollType
+     * @return bool
      */
-    public function getPollType()
+	public function getActive(): bool
     {
-        return $this->pollType;
+	    return $this->active;
     }
 
     /**
@@ -310,15 +320,5 @@ class Poll
         $this->active = $active;
 
         return $this;
-    }
-
-    /**
-     * Get active.
-     *
-     * @return bool
-     */
-    public function getActive(): bool
-    {
-        return $this->active;
     }
 }

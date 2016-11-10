@@ -79,6 +79,16 @@ class Vote
     }
 
     /**
+     * Get time.
+     *
+     * @return \DateTime
+     */
+	public function getTime(): DateTime
+	{
+		return $this->time;
+	}
+
+	/**
      * Set time.
      *
      * @param \DateTime $time
@@ -93,13 +103,13 @@ class Vote
     }
 
     /**
-     * Get time.
+     * Get poll.
      *
-     * @return \DateTime
+     * @return \AppBundle\Entity\Poll
      */
-    public function getTime(): DateTime
+	public function getPoll(): \AppBundle\Entity\Poll
     {
-        return $this->time;
+	    return $this->poll;
     }
 
     /**
@@ -117,13 +127,13 @@ class Vote
     }
 
     /**
-     * Get poll.
+     * Get caster.
      *
-     * @return \AppBundle\Entity\Poll
+     * @return \AppBundle\Entity\User
      */
-    public function getPoll(): AppBundle\Entity\Poll
+	public function getCaster(): \AppBundle\Entity\User
     {
-        return $this->poll;
+	    return $this->caster;
     }
 
     /**
@@ -141,13 +151,13 @@ class Vote
     }
 
     /**
-     * Get caster.
+     * Get choice.
      *
-     * @return \AppBundle\Entity\User
+     * @return \AppBundle\Entity\Choice
      */
-    public function getCaster(): AppBundle\Entity\User
+	public function getChoice(): \AppBundle\Entity\Choice
     {
-        return $this->caster;
+	    return $this->choice;
     }
 
     /**
@@ -165,13 +175,13 @@ class Vote
     }
 
     /**
-     * Get choice.
+     * Get weight.
      *
-     * @return \AppBundle\Entity\Choice
+     * @return int
      */
-    public function getChoice(): AppBundle\Entity\Choice
+	public function getWeight(): int
     {
-        return $this->choice;
+	    return $this->weight;
     }
 
     /**
@@ -186,15 +196,5 @@ class Vote
         $this->weight = $weight;
 
         return $this;
-    }
-
-    /**
-     * Get weight.
-     *
-     * @return int
-     */
-    public function getWeight(): int
-    {
-        return $this->weight;
     }
 }

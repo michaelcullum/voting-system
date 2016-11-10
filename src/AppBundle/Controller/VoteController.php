@@ -6,8 +6,8 @@ use AppBundle\Entity\Poll;
 use AppBundle\Exception\InvalidSort;
 use AppBundle\Utils\ElectionManager;
 use AppBundle\Utils\PollManager;
-use AppBundle\Utils\VotableManager;
 use Pagerfanta\Adapter\ArrayAdapter;
+use PagerFanta\Exception\Exception;
 use Pagerfanta\Pagerfanta;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -59,7 +59,9 @@ class VoteController extends Controller
 	 *
 	 * @param Request $request
 	 *
-	 * @return Pagerfanta
+	 * @param array   $items
+	 *
+	 * @return \Pagerfanta\Pagerfanta
 	 * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
 	 */
 	protected function paginate(Request $request, array $items): Pagerfanta
@@ -70,7 +72,7 @@ class VoteController extends Controller
 
 		try {
 			$paginator->setCurrentPage($request->query->get('page', 1), false, true);
-		} catch ( \PagerFanta\Exception\Exception $e ) {
+		} catch (Exception $e) {
 			throw new NotFoundHttpException('Page not found');
 		}
 

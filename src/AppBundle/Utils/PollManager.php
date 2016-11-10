@@ -26,9 +26,13 @@ class PollManager
 
 	public function getPolls($sort, boolean $current = false): array
 	{
+		// TODO: Implement sorts and getting polls from db
+
 		if ($current) {
 			return $this->getCurrentPolls();
 		}
+
+		return [];
 	}
 
     /**
@@ -104,6 +108,14 @@ class PollManager
 
     public function markPollClosed(Poll $poll)
     {
-        return;
+	    $poll->setActive(false);
+	    $result = $this->generateResult($poll);
+
+	    return $result;
+    }
+
+	public function generateResult(Poll $poll)
+	{
+
     }
 }
